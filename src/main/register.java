@@ -21,7 +21,8 @@ public class register extends HttpServlet {
 		Connection con;
 		
 		
-		response.setContentType("text/html");
+		response.setContentType("text/html; charset=utf-8");
+		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		
 		String n=request.getParameter("first_name");
@@ -42,7 +43,7 @@ public class register extends HttpServlet {
 			
 			int i=ps.executeUpdate();
 			if(i>0)
-			out.print("You are successfully registered...");
+				request.getRequestDispatcher("Regtest.jsp").forward(request, response);
 			
 			
 		}catch (Exception e2) {System.out.println(e2);}

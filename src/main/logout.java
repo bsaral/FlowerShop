@@ -20,15 +20,15 @@ public class logout extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 		
-	response.setContentType("text/html");
-	PrintWriter out= response.getWriter();
-	HttpSession session= request.getSession();
-	session.invalidate();
-	out.println("<font color=red><b>You have been successfully logged out</b></font>");
-	out.println("<font color=green><b>Login again</b></font>");
-	ServletContext context= getServletContext();
-	RequestDispatcher rd= context.getRequestDispatcher("/Login.html");
-	rd.include(request, response);
+		response.setContentType("text/html; charset=utf-8");
+		request.setCharacterEncoding("UTF-8");
+		PrintWriter out= response.getWriter();
+		HttpSession session= request.getSession();
+		session.invalidate();
+		
+		ServletContext context= getServletContext();
+		RequestDispatcher rd= context.getRequestDispatcher("/index.jsp");
+		rd.include(request, response);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

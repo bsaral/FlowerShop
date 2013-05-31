@@ -49,14 +49,14 @@ public class login extends HttpServlet {
 			String n= rs.getString("email");
 			session.setAttribute("email", n);
 
-			request.getRequestDispatcher("anasayfa.jsp").forward(request, response);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 			
 			else{
 				
 			ServletContext context= getServletContext();
 			RequestDispatcher rd= context.getRequestDispatcher("/Login.jsp");
-			out.println("<font color=red>invalid email or password</font>");
+			
 			rd.include(request, response);
 			}
 			

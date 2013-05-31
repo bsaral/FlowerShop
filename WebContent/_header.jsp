@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %> 
-<%@ page import="java.io.*" %> 
-<%@ page import="javax.servlet.*" %> 
+
+
+
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -64,12 +64,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="anasayfa.jsp">Moda Çiçekçilik</a>
+          <a class="brand" href="index.jsp">Moda Çiçekçilik</a>
           <div class="nav-collapse collapse">
             <ul class="nav pull-left">
 			 
          		
-              <li class="active"><a href="anasayfa.jsp">Anasayfa</a></li>
+              <li class="active"><a href="index.jsp">Anasayfa</a></li>
               <li><a href="hakkimizda.html">Hakkımızda</a></li>
               <li><a href="iletisim.html">İletisim</a></li>
 			  <!-- <li><a href="#contact">Gönderime göre çiçekler</a></li>
@@ -132,10 +132,16 @@
 				 
             	
             		<li class="dropdown" >
-            			<a class="dropdown-toggle" href="#" data-toggle="dropdown" style = "position: relative;left:2in;">Giriş Yap <strong class="caret"></strong></a>
-            			<!--   <% session = request.getSession(); %>
-            			<h1> <%= session.getAttribute("email") %></h1> -->
-							<div class="dropdown-menu" style="padding: 20px; padding-bottom: -30px;" >
+            		 <% 
+            			   	session = request.getSession();
+            				if (session.getAttribute("email") != null ){
+            				%>
+            					<a  style = "position: relative;left:1in;"><%= session.getAttribute("email") %> </a>
+            					<li style= "position: relative;left:1.0in;"><a href="logout">Çıkış</a></li>
+            				<% }
+            				else { %>
+            					<a class="dropdown-toggle" href="#" data-toggle="dropdown" style = "position: relative;left:1.5in;"> Giriş Yap <strong class="caret"></strong></a>
+            					<div class="dropdown-menu" style="padding: 20px; padding-bottom: -30px;" >
 								<form  method="get" action="login"  >
 								
 								
@@ -150,6 +156,12 @@
 								
 								</form>
 							</div>
+            				<% }
+            					%>
+            			
+            			  
+            					
+							
            			 </li>
          		 
             </ul>
