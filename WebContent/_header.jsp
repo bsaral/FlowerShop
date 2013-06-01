@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
+<%@ page import="java.sql.*" %> 
+<%@ page import="java.io.*" %> 
 
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -43,10 +44,7 @@
     </style>
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="../assets/js/html5shiv.js"></script>
-    <![endif]-->
+  
 
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
@@ -64,7 +62,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="index.jsp">Moda Çiçekçilik</a>
+          <a class="brand" href="index.jsp">MODA ÇİÇEKCİLİK</a>
           <div class="nav-collapse collapse">
             <ul class="nav pull-left">
 			 
@@ -78,19 +76,17 @@
 			  
 			  <li class="dropdown" "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Gönderime göre çiçekler<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li><a href="#">Sevgiliye</a></li>
-    					  <li><a href="#">Doğum günü</a></li>
-    					  <li><a href="#">Yeni iş &amp; Terfi</a>
-    						 <a href="#">Geçmiş Olsun</a>
-    						 <a href="#">Gençlere</a>
-    						 <a href="#">Yıldönümü</a>
-    						 <a href="#">Yeni Bebek</a>
-    						 <a href="#">Anneye</a>
-    						 <a href="#">Babaya</a>
-    						 <a href="#">Açılış Kutlama</a>
-    						 <a href="#">Nikah &amp; Düğün</a>
-    						 <a href="#">Merasim &amp; Cenaze</a>
-    						 <a href="#">VIP Çiçekler</a>
+                          <li><a href="sevgili.jsp">Sevgiliye</a></li>
+    					  <li><a href="dogum.jsp">Doğum günü</a></li>
+    					  <li><a href="is.jsp">Yeni iş &amp; Terfi</a>
+    						 <a href="hasta.jsp">Geçmiş Olsun</a>
+    						 <a href="genc.jsp">Gençlere</a>
+    						 <a href="dönüm.jsp">Yıldönümü</a>
+    						 <a href="bebek.jsp">Yeni Bebek</a>
+    						 <a href="kutlama.jsp">Açılış Kutlama</a>
+    						 <a href="nikah.jsp">Nikah &amp; Düğün</a>
+    						 <a href="cenaze.jsp">Merasim &amp; Cenaze</a>
+    						 
     					  </li>
                         </ul>
                 </li>
@@ -177,19 +173,17 @@
             <ul class="nav nav-list">
               <li class="nav-header">Gönderime göre çiçekler</li>
             <!--   <li class="active"><a href="#">Link</a></li> -->
-							<li><a href="#">Sevgiliye</a></li>
-    					    <li><a href="#">Doğum günü</a></li>
-    					    <li><a href="#">Yeni iş &amp; Terfi</a></li>
-    						<li> <a href="#">Geçmiş Olsun</a></li>
-    						<li> <a href="#">Gençlere</a></li>
-    						<li> <a href="#">Yıldönümü</a></li>
-    						<li> <a href="#">Yeni Bebek</a></li>
-    						<li> <a href="#">Anneye</a></li>
-    						<li> <a href="#">Babaya</a></li>
-    						<li> <a href="#">Açılış Kutlama</a></li>
-    						<li> <a href="#">Nikah &amp; Düğün</a></li>
-    						<li> <a href="#">Merasim &amp; Cenaze</a></li>
-    						<li> <a href="#">VIP Çiçekler</a></li>
+							<li><a href="sevgili.jsp">Sevgiliye</a></li>
+    					    <li><a href="dogum.jsp">Doğum günü</a></li>
+    					    <li><a href="is.jsp">Yeni iş &amp; Terfi</a></li>
+    						<li> <a href="hasta.jsp">Geçmiş Olsun</a></li>
+    						<li> <a href="genc.jsp">Gençlere</a></li>
+    						<li> <a href="dönüm.jsp">Yıldönümü</a></li>
+    						<li> <a href="bebek.jsp">Yeni Bebek</a></li>
+    						<li> <a href="kutlama.jsp">Açılış Kutlama</a></li>
+    						<li> <a href="nikah.jsp">Nikah &amp; Düğün</a></li>
+    						<li> <a href="cenaze.jsp">Merasim &amp; Cenaze</a></li>
+    						
 							
               <li class="nav-header">Çeşite göre çiçekler</li>
                         <li><a href="#">Güller</a></li>
