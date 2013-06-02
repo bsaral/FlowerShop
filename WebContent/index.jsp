@@ -62,36 +62,20 @@
 				
 				
 					<div class="span5" style="padding-left: 50px;padding-top: 50px;">
+					<form action="order" method="post">
 						<h4><%=rs.getString(2)%></h4>
 							<img style="padding-bottom: 20px;height:250px;width: 250px;" src = <%=rs.getString(4)%> />
-							<button class = "btn btn-info" value ="SATIN AL">SATIN AL</button>
+							<input type="submit" class = "btn btn-info" value ="SATIN AL" name="sub"/>
 								<h4 style="padding-left: 120px;margin-top: -25px;" >KDV +<%=rs.getString(3)%></h4><br>
-							</table>
+					</form>		
 					</div>
 				
 				<% 
-				if(count == 4)
+				if(count == 6)
 					break;
 				} 
 				
-				while (rs.next()) 
-				{ 
-					count= count+1;
-				%> 
 				
-				
-					<div class="span5" style="position:relative;top:-8.1in;left:7in">
-						<h4><%=rs.getString(2)%></h4>
-							<img style="padding-bottom: 20px;height:250px;width: 250px;" src = <%=rs.getString(4)%> />
-							<button class = "btn btn-info" value ="SATIN AL">SATIN AL</button>
-								<h4 style="padding-left: 120px;margin-top: -25px;" >KDV +<%=rs.getString(3)%></h4>
-							
-					</div>
-				
-				<% 
-				if(count == 2)
-					break;
-				} 
 			
 			
 				}
