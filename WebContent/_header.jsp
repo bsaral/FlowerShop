@@ -74,7 +74,7 @@
 			  <li><a href="#contact">Çeşite göre çiçekler</a></li>
 			  <li><a href="#contact">Hazırlanışa göre çiçekler</a></li> -->
 			  
-			  <li class="dropdown" "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Gönderime göre çiçekler<b class="caret"></b></a>
+			<!--    <li class="dropdown" "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Gönderime göre çiçekler<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li><a href="sevgili.jsp">Sevgiliye</a></li>
     					  <li><a href="dogum.jsp">Doğum günü</a></li>
@@ -124,7 +124,7 @@
     								</li>
                         </ul>
                 </li>	  
-					  
+					  -->
 				 
             	
             		<li class="dropdown" >
@@ -132,13 +132,15 @@
             			   	session = request.getSession();
             				if (session.getAttribute("email") != null ){
             				%>
-            					<a  style = "position: relative;left:1in;"><%= session.getAttribute("email") %> </a>
-            					<li style= "position: relative;left:1.0in;"><a href="logout">Çıkış</a></li>
+            					
+            					<a  style = "position: relative;left:6.5in;"><%= session.getAttribute("email") %> </a>
+            					<li style= "position: relative;left:3.0in;"><a href="order.jsp"><img  src="assets/img/cart.png"/> Sepetiniz</a></li>
+            					<li style= "position: relative;left:5.2in;"><a href="logout">Çıkış</a></li>
             				<% }
             				else { %>
-            					<a class="dropdown-toggle" href="#" data-toggle="dropdown" style = "position: relative;left:1.5in;"> Giriş Yap <strong class="caret"></strong></a>
+            					<a class="dropdown-toggle" href="#" data-toggle="dropdown" style = "position: relative;left:7in;"> Giriş Yap <strong class="caret"></strong></a>
             					<div class="dropdown-menu" style="padding: 20px; padding-bottom: -30px;" >
-								<form  method="get" action="login"  >
+								<form  method="post" action="login"  >
 								
 								
 								E-mail :
@@ -178,7 +180,7 @@
     					    <li><a href="is.jsp">Yeni iş &amp; Terfi</a></li>
     						<li> <a href="hasta.jsp">Geçmiş Olsun</a></li>
     						<li> <a href="genc.jsp">Gençlere</a></li>
-    						<li> <a href="dönüm.jsp">Yıldönümü</a></li>
+    						<li> <a href="donum.jsp">Yıldönümü</a></li>
     						<li> <a href="bebek.jsp">Yeni Bebek</a></li>
     						<li> <a href="kutlama.jsp">Açılış Kutlama</a></li>
     						<li> <a href="nikah.jsp">Nikah &amp; Düğün</a></li>

@@ -21,7 +21,7 @@
 				connection = DriverManager.getConnection(connectionURL, "root", "");
 				statement = connection.createStatement(); 
 				
-				String QueryString = "SELECT * from sevgili  "; 
+				String QueryString = "SELECT * from cenaze  "; 
 				rs = statement.executeQuery(QueryString);
 				%>
 				

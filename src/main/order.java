@@ -36,40 +36,12 @@ public class order extends HttpServlet {
 		PrintWriter out= response.getWriter();
 		
 		HttpSession session = request.getSession();
-		Stack liste = (Stack)session.getAttribute("liste");
+		request.getRequestDispatcher("order.jsp").forward(request, response);
 		
-		String email = (String) session.getAttribute("email");
-		String name = request.getParameter("name");
-		String prime = request.getParameter("prime");
-		
-		if (email == null ){
-			request.getRequestDispatcher("Login.jsp").forward(request, response);
-		}
-		else {
-			if (liste == null){
-				liste =  new Stack();
-			}
-			if (name != null && prime != null){
-				liste.push(name);
-				liste.push(prime);
-			}
-			session.setAttribute("liste", liste);
-		}
-		
-		int count = liste.size();
-		if (count == 0){
-			out.println("listemiz bos");
-		}
-		else{
-
-			for(int i = 0 ; i < count ; i ++){
-				out.println("<li>"+liste.get(i)+"</li>");
-			}
-
-		
-	}
 		
 
 }
-}
 
+
+	
+}

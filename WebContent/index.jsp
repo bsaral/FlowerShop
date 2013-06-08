@@ -11,24 +11,15 @@
                 <div class="carousel-inner">
                   <div class="item active">
                     <img src="assets/img/slider1.jpg" alt="">
-                    <div class="carousel-caption">
-                      <h4>SAMSUN</h4>
-                      <p>MODA ÇİÇEKCİLİK</p>
-                    </div>
+                    
                   </div>
                   <div class="item">
                     <img src="assets/img/slider2.jpg" alt="">
-                    <div class="carousel-caption">
-                      <h4>DUYGULARINIZI TARİF ETMENİN EN İYİ YOLU</h4>
-                      <p>MODA ÇİÇEKCİLİK</p>
-                    </div>
+                   
                   </div>
                   <div class="item">
                     <img src="assets/img/slider3.jpg" alt="">
-                    <div class="carousel-caption">
-                      <h4>BİZİM İÇİN SİZ ÖNEMLİSİNİZ</h4>
-                      <p>MODA ÇİÇEKCİLİK</p>
-                    </div>
+                   
                   </div>
                 </div>
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -62,11 +53,19 @@
 				
 				
 					<div class="span5" style="padding-left: 50px;padding-top: 50px;">
+					<% session = request.getSession();
+    				if (session.getAttribute("email") != null ){
+    				%> 
+					<form action="login" method="post">
+					<% } 
+    				else {
+					%>
 					<form action="order" method="post">
+					<%} %>
 						<h4><%=rs.getString(2)%></h4>
 							<img style="padding-bottom: 20px;height:250px;width: 250px;" src = <%=rs.getString(4)%> />
 							<input type="submit" class = "btn btn-info" value ="SATIN AL" name="sub"/>
-								<h4 style="padding-left: 120px;margin-top: -25px;" >KDV +<%=rs.getString(3)%></h4><br>
+								<h4 style="padding-left: 120px;margin-top: -25px;" >KDV +<%=rs.getInt(3)%>TL</h4><br>
 					</form>		
 					</div>
 				

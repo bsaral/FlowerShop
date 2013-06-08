@@ -20,7 +20,7 @@ import com.mysql.jdbc.PreparedStatement;
 @WebServlet("/login")
 public class login extends HttpServlet {
 	
-	public void doGet(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException{
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 			response.setContentType("text/html; charset=utf-8");
 			request.setCharacterEncoding("UTF-8");
