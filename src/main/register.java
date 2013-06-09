@@ -30,6 +30,13 @@ public class register extends HttpServlet {
 		String e=request.getParameter("email");
 		String c=request.getParameter("password");
 		
+		String emailPattern="^([A-Za-z0-9_\\-\\.])+\\@([A-Za-z0-9_\\-\\.])+\\.([A-Za-z]{2,4})";
+		Boolean regex = e.matches(emailPattern); 
+		
+		if (regex == false){
+			request.getRequestDispatcher("regex.jsp").forward(request, response);
+		}
+		
 		
 		try{
 			dbConnection = new DatabaseConnection();

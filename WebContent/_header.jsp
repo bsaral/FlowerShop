@@ -64,81 +64,20 @@
           </button>
           <a class="brand" href="index.jsp">MODA ÇİÇEKCİLİK</a>
           <div class="nav-collapse collapse">
-            <ul class="nav pull-left">
-			 
-         		
-              <li class="active"><a href="index.jsp">Anasayfa</a></li>
-              <li><a href="hakkimizda.html">Hakkımızda</a></li>
-              <li><a href="iletisim.html">İletisim</a></li>
-			  <!-- <li><a href="#contact">Gönderime göre çiçekler</a></li>
-			  <li><a href="#contact">Çeşite göre çiçekler</a></li>
-			  <li><a href="#contact">Hazırlanışa göre çiçekler</a></li> -->
-			  
-			<!--    <li class="dropdown" "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Gönderime göre çiçekler<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="sevgili.jsp">Sevgiliye</a></li>
-    					  <li><a href="dogum.jsp">Doğum günü</a></li>
-    					  <li><a href="is.jsp">Yeni iş &amp; Terfi</a>
-    						 <a href="hasta.jsp">Geçmiş Olsun</a>
-    						 <a href="genc.jsp">Gençlere</a>
-    						 <a href="dönüm.jsp">Yıldönümü</a>
-    						 <a href="bebek.jsp">Yeni Bebek</a>
-    						 <a href="kutlama.jsp">Açılış Kutlama</a>
-    						 <a href="nikah.jsp">Nikah &amp; Düğün</a>
-    						 <a href="cenaze.jsp">Merasim &amp; Cenaze</a>
-    						 
-    					  </li>
-                        </ul>
-                </li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Çeşite göre çiçekler <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                          <li>
-    									<a href="#">Güller</a>
-    								</li>
-    								<li>
-    									<a href="#">Orkideler</a>
-    								</li>
-    								<li>
-    									<a href="#">Antaryum</a>
-    									<a href="#">Lilyum</a>
-    									<a href="#">Gerbera</a>
-    									<a href="#">Papatya &amp; Kır Çiçekleri</a>
-    									<a href="#">Saksı Bitkileri</a>
-    								</li>
-                        </ul>
-                </li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hazırlanışa göre çiçekler <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                          <li>
-    									<a href="#">Buketler</a>
-    								</li>
-    								<li>
-    									<a href="#">Vazo Çiçekleri</a>
-    								</li>
-    								<li>
-    									<a href="#">Aranjmanlar</a>
-    									<a href="#">Çiçek Sepeti</a>
-    									<a href="#">Ayaklı Sepet</a>
-    									<a href="#">Ferforje</a>
-    									<a href="#">Çelenk</a>
-    								</li>
-                        </ul>
-                </li>	  
-					  -->
-				 
-            	
-            		<li class="dropdown" >
+          <ul class="nav pull-right">
+<!--                     <li id="fat-menu" class="dropdown"> -->
+                      <li class="dropdown" >
             		 <% 
             			   	session = request.getSession();
             				if (session.getAttribute("email") != null ){
             				%>
             					
-            					<a  style = "position: relative;left:6.5in;"><%= session.getAttribute("email") %> </a>
-            					<li style= "position: relative;left:3.0in;"><a href="order.jsp"><img  src="assets/img/cart.png"/> Sepetiniz</a></li>
-            					<li style= "position: relative;left:5.2in;"><a href="logout">Çıkış</a></li>
+            					<a><%= session.getAttribute("email") %> </a>
+            					<li><a href="order.jsp"><img  src="assets/img/cart.png"/> Sepetiniz</a></li>
+            					<li><a href="logout">Çıkış</a></li>
             				<% }
             				else { %>
-            					<a class="dropdown-toggle" href="#" data-toggle="dropdown" style = "position: relative;left:7in;"> Giriş Yap <strong class="caret"></strong></a>
+            					<a class="dropdown-toggle" href="#" data-toggle="dropdown""> Giriş Yap <strong class="caret"></strong></a>
             					<div class="dropdown-menu" style="padding: 20px; padding-bottom: -30px;" >
 								<form  method="post" action="login"  >
 								
@@ -162,6 +101,20 @@
 							
            			 </li>
          		 
+                  </ul>
+                  
+                  
+                  
+                  
+            <ul class="nav pull-left">
+			 
+         		
+              <li class="active"><a href="index.jsp">Anasayfa</a></li>
+              <li><a href="hakkimizda.jsp">Hakkımızda</a></li>
+              <li><a href="iletisim.jsp">İletisim</a></li>
+              
+              
+	          		
             </ul>
           </div><!--/.nav-collapse -->
         </div>

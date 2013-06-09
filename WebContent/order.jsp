@@ -31,21 +31,19 @@
 	
 	int count = liste1.size();
 	if (count == 0){
-		%>
-		<div class ="hero-unit" style="height:0.5in;width:500px;position: relative;left:5in;top:1in;">
-			<h2> Sepetiniz boş </h2>
-		</div>
-	<% 
+		
+		request.getRequestDispatcher("sepet_bos.jsp").forward(request, response);
+	
 	}
 	else{
 		%>
 		<form action="delete" method="post">
-		<table border="1px">
-			<tr>
+		<table  class="table table-bordered" style="width:8in;position: relative;left:2in;top:0.7in">
+			<tr class="success">
 			<th> Sipariş ismi </th>
 			<th> Fiyatı </th>
 			</tr>
-			<tr>
+			<tr >
 		<% 
 		int total = 0;
 		for(int i = 0 ; i < count ; i ++){ 
@@ -53,9 +51,11 @@
 			
 		%>
 			
-			
+			<tr  >
+			</tr>
+			<tr class="error">
 			<td><%= liste1.get(i) %></td>
-			<td><%= liste2.get(i)  %></td>
+			<td><%= liste2.get(i)  %> TL</td>
 			<td><input type="checkbox" name="id" value="<%= i %>"></td>
 			
 			
@@ -66,7 +66,7 @@
 		%>
 		</tr>
 		</table>
-		<input type="submit" class ="btn btn-danger" value ="Sil"/>
+		<input type="submit" class ="btn  btn-large btn-danger" value ="Sil" style="width:170px;position: relative;left:8in;top:1.35in"/>
 		</form>
 		<%
 	}
@@ -75,8 +75,8 @@
 
 %>
 
-<a href="paypal.jsp" class ="btn btn-large btn-success"> Ödemeyi Yap </a>
-<a href="sevgili.jsp" class ="btn btn-large btn-warning"> Çiçek Ekle </a>
+<a href="paypal.jsp" class ="btn btn-large btn-success" style="width:150px;position: relative;left:2in;top:0.7in"> Ödemeyi Yap </a>
+<a href="sevgili.jsp" class ="btn btn-large btn-warning" style="width:150px;position: relative;left:3in;top:0.7in"> Çiçek Ekle </a>
 
 </body>
 <jsp:include page="_footer.jsp"></jsp:include>

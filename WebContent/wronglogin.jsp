@@ -21,9 +21,10 @@
 		 
 		  <input type="text" name="email" placeholder="EMAİL" style ="width:3.2in;"/><br/><br/>
 		  <input type="password" name="password" placeholder="PAROLA" style ="width:3.2in;"/><br/><br/>
-		
+		  <a href = "Register.jsp" style = "position: relative;left:2.5in;"> Hesabım yok </a>
 		</div>
 		<br/><br>
+		
 		<input type="submit" value="GÖNDER" class = "btn btn-large btn-success" style ="width:2in;position: relative;left: -0.4in;top:0px;"/>
 		<input type="reset" name="reset" class = "btn btn-large btn-danger"  style ="width:2in;position: relative;left: 1.9in;top:-45px" value="RESET">
 	</div>

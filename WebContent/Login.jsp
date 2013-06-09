@@ -18,6 +18,7 @@
 		
 		</div>
 		<br/><br>
+		
 		<input type="submit" value="GÖNDER" class = "btn btn-large btn-success" style ="width:2in;position: relative;left: -0.4in;top:0px;"/>
 		<input type="reset" name="reset" class = "btn btn-large btn-danger"  style ="width:2in;position: relative;left: 1.9in;top:-45px" value="RESET">
 	</div>

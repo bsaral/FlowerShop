@@ -53,7 +53,7 @@
 				%> 
 				
 				<div class="row-fluid" >
-					<div class="span4" style="padding-left: 80px;padding-top: 80px;">
+					<div class="span4" style="position:relative;left:1.2in;padding-left: 30px;padding-top: 50px;">
 					<% session = request.getSession();
     				if (session.getAttribute("email") == null ){
     				%> 

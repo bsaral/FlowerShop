@@ -13,7 +13,7 @@
 	<div class="navbar-inner">
         <div class="container">
            <ul class="nav pull-right" >
-           <div style = "position:absolute;top:10px;right:3.5in;width:4.5in;"><p style="color:white;">©2013 - Moda Çiçekcilik   /  Designer by <a href="#" style="color:white;"> tugdev - <a href="#" style="color:white;">bsaral - <a href="#" style="color:white;">unsame </a></div>
+           <div style = "position:absolute;top:10px;right:3.5in;width:4.5in;"><p style="color:white;">©2013 - Moda Çiçekcilik   /  Designer by <a href="http://tr.linkedin.com/in/tugdev" style="color:white;"> tugdev - <a href="http://tr.linkedin.com/pub/bet%C3%BCl-saral/36/837/767" style="color:white;">bsaral - <a href="https://github.com/unsame?source=c" style="color:white;">unsame </a></div>
           </ul>
           
         </div>
