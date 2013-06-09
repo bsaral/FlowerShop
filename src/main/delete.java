@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/delete")
 public class delete extends HttpServlet {
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=utf-8");
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter out= response.getWriter();
@@ -23,13 +23,20 @@ public class delete extends HttpServlet {
 		HttpSession session = request.getSession();
 		Stack liste1 = (Stack)session.getAttribute("liste1");
 		Stack liste2 = (Stack)session.getAttribute("liste2");
-		String a = request.getParameter("id");
-		out.println(a);
-		if (a == null)
-			out.println("<h1> evet </h1>");
-		else
-			out.println("<h1> hayýr </h1>"+a);
+		
+		String select[] = request.getParameterValues("id"); 
+		if (select != null && select.length != 0) {
+			out.println("You have selected: ");
+			for (int i = 0; i < select.length; i++) {
+				int a = Integer.parseInt(select[i]);
+				liste1.remove(a);
+				request.getRequestDispatcher("order.jsp").forward(request, response);
+				
+			}
+		}
+		
+		
 	}
-
+	
 	
 }

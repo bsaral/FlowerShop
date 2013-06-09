@@ -1,9 +1,11 @@
 package main;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.regex.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -16,18 +18,22 @@ import javax.servlet.http.HttpSession;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
+import com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern;
 
 @WebServlet("/login")
 public class login extends HttpServlet {
-	
+	public static final String EMAIL_REGEX = 
+            "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 			response.setContentType("text/html; charset=utf-8");
 			request.setCharacterEncoding("UTF-8");
 			PrintWriter out= response.getWriter();
+			
 
 			String email= request.getParameter("email");
 			String psw= request.getParameter("password");
+			
 
 			DatabaseConnection dbConnection;
 			Connection con;
@@ -35,7 +41,7 @@ public class login extends HttpServlet {
 			ResultSet rs;
 
 			
-
+			
 			try {
 			dbConnection = new DatabaseConnection();
 			con = dbConnection.setConnection();
@@ -55,7 +61,7 @@ public class login extends HttpServlet {
 			else{
 				
 			ServletContext context= getServletContext();
-			RequestDispatcher rd= context.getRequestDispatcher("/Login.jsp");
+			RequestDispatcher rd= context.getRequestDispatcher("/wronglogin.jsp");
 			
 			rd.include(request, response);
 			}
@@ -69,7 +75,7 @@ public class login extends HttpServlet {
 			{
 			out.println();
 			}
-			}
+		}
 
-   
+	
 }

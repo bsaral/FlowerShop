@@ -5,13 +5,13 @@
 <body>
 
 <%
-
+	
 	Stack liste1 = (Stack)session.getAttribute("liste1");
 	Stack liste2 = (Stack)session.getAttribute("liste2");
 	
 	String email = (String) session.getAttribute("email");
 	String name = request.getParameter("name");
-	int prime = Integer.parseInt(request.getParameter("prime"));
+	String prime = request.getParameter("prime");
 	
 	if (email == null ){
 		request.getRequestDispatcher("Login.jsp").forward(request, response);
@@ -21,7 +21,7 @@
 			liste1 =  new Stack();
 			liste2 =  new Stack();
 		}
-		if (name != null && prime != 0){
+		if (name != null && prime != null){
 			liste1.push(name);
 			liste2.push(prime);
 		}
@@ -39,7 +39,7 @@
 	}
 	else{
 		%>
-		<form action="delete" method="get">
+		<form action="delete" method="post">
 		<table border="1px">
 			<tr>
 			<th> Sipariş ismi </th>
@@ -49,15 +49,15 @@
 		<% 
 		int total = 0;
 		for(int i = 0 ; i < count ; i ++){ 
-	
+			
 			
 		%>
 			
 			
 			<td><%= liste1.get(i) %></td>
 			<td><%= liste2.get(i)  %></td>
+			<td><input type="checkbox" name="id" value="<%= i %>"></td>
 			
-			<td><input type="submit" class ="btn btn-danger" value ="Sil"/></td>
 			
 			
 		<% 
@@ -66,15 +66,17 @@
 		%>
 		</tr>
 		</table>
+		<input type="submit" class ="btn btn-danger" value ="Sil"/>
 		</form>
 		<%
 	}
 	
-
+	
 
 %>
 
 <a href="paypal.jsp" class ="btn btn-large btn-success"> Ödemeyi Yap </a>
+<a href="sevgili.jsp" class ="btn btn-large btn-warning"> Çiçek Ekle </a>
 
 </body>
 <jsp:include page="_footer.jsp"></jsp:include>

@@ -3,10 +3,16 @@
 
 <jsp:include page="_header.jsp"></jsp:include>
 
-
+<div class = "span6">
+	<div class="alert alert-danger" style = "font-size:20px;">
+  		<button type="button" class="close" data-dismiss="alert">&times;</button>
+  		<strong>Dikkat !</strong><br><br> Giriş yapmadınız veya yanlış giriş yaptınız.
+	</div>
+	</div>
 <div class = "container">
-	<div class = "span5">
 
+	<div class = "span5">
+	
 	<div class = "hero-unit" style ="position: relative;left: 3in;top:0.5in;height: 3in" >
 	<form action="login" action="jsp_with_post_method.jsp" method="post">
 	<h3 style ="position: relative;left: 1.2in;top:-60px"> GİRİŞ YAP </h3><br>
