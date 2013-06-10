@@ -7,7 +7,7 @@ FlowerShop
 
 2- Firmanın kendini tanıttığı alan burda bulunur.
 
-<img src ="http://i.imgur.com/8i8AJb9.jpg"/>
+<img src ="http://i.imgur.com/UPnSY6f.png"/>
 
 3- Firma ile iletişim için bir form bulunur.
 
